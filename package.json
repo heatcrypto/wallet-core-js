@@ -1,0 +1,41 @@
+{
+  "name": "wallet-core-js",
+  "version": "0.1.0",
+  "description": "Cross-platform, cross-blockchain wallet library.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ./src/**/*",
+    "test": "nyc mocha './test/*/**/*.test.js' --require esm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heatcrypto/wallet-core-js.git"
+  },
+  "keywords": [
+    "heat",
+    "blockchain",
+    "wallet",
+    "bitcoin",
+    "ethereum"
+  ],
+  "author": "dennis@heatledger.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heatcrypto/wallet-core-js/issues"
+  },
+  "homepage": "https://github.com/heatcrypto/wallet-core-js#readme",
+  "devDependencies": {
+    "chai": "*",
+    "eslint": "^6.8.0",
+    "eslint-plugin-mocha": "^6.3.0",
+    "esm": "^3.2.25",
+    "mocha": "*",
+    "nyc": "^15.0.1"
+  },
+  "dependencies": {
+    "@trezor/utxo-lib": "^0.1.0",
+    "bip32": "^2.0.5",
+    "bip39": "^3.0.2"
+  }
+}
