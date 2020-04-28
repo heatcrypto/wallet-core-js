@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "lint": "eslint ./src/**/*",
-    "test": "nyc mocha './test/*/**/*.test.js' --require esm"
+    "nyc": "nyc mocha './test/*/**/*.test.js' --require esm",
+    "test": "mocha './test/*/**/*.test.js' --require esm"
   },
   "repository": {
     "type": "git",
