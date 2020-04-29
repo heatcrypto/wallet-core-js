@@ -1,0 +1,42 @@
+{
+  "beach since wonder drink truck panel smart neither glimpse pioneer midnight advice": [
+    {
+      "path": "m/44'/0'/0'/0/0",
+      "wif": "L2yzQ7uTZrUAf1qRpKcS32b66LaG4FZdcbsr5gZBp5s8BzhcyZc3",
+      "network": "bitcoin",
+      "types": {
+        "p2pkh": "1LyEWgd169regnCPMvpsXhJt454FotB74P",
+        "p2sh": "3MfFSE7Se4B2mwtpV2VTxKfpCbLyQpCbBK",
+        "bech32": "bc1qmvx0v7c7q4384chwefjusg6edz0vuyev0rwp50"
+      }
+    },
+    {
+      "path": "m/44'/1'/0'/0/0",
+      "wif": "cMf3D1jBNFQs2iwjFQxotniurnbRK7JJgKAbNDe5pdsRYGzwYghn",
+      "network": "testnet",
+      "types": {
+        "p2pkh": "mjNg6UoSLtAPgo3pRTWRF6u4vcBS8g9rmo",
+        "p2sh": "2Mw6wni8vhDYsCduBW7pWTm2wRV5cYS9uAL",
+        "bech32": "tb1q9f86wxw3thjtsvkzcns9gfsdn7jkmsa3uc97kn"
+      }
+    },
+    {
+      "path": "m/44'/2'/0'/0/0",
+      "wif": "T9EKacg5qDcb5oPSiEiqi8uKZzQn8DBPTrBJsWKGP8xQraKNgD8F",
+      "network": "litecoin",
+      "types": {
+        "p2pkh": "LdxxSXnBFEGzsfDabRroJ3ZoeC1RJ111Ry",
+        "p2sh": "MSeAQkNkfbCkWXVkeGXSGJ7NuCXJhcuU7n"
+      }
+    },
+    {
+      "path": "m/44'/145'/0'/0/0",
+      "wif": "L5AdqQg5CVZWwsaxriEMmXnCHmqxWVgdCP6jszJErKZyMB1zz4sf",
+      "network": "bitcoincash",
+      "types": {
+        "p2pkh": "bitcoincash:qzph7tzyyy3ukfw5h55q8ylwffcakqj37qmdlq8507",
+        "p2sh": "bitcoincash:pzph7tzyyy3ukfw5h55q8ylwffcakqj37qvgz0qh5r"
+      }
+    }
+  ]
+}
