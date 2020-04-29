@@ -1,14 +1,14 @@
-import * as bip39 from 'bip39'
-import * as bip32 from 'bip32'
+import { mnemonicToSeedSync, generateMnemonic, validateMnemonic } from 'bip39'
+import { fromSeed } from 'bip32'
 import { KeyPair } from './keypair'
 
 export class HDWallet {
-  bip39GenerateMnemonic() {
-    return bip39.generateMnemonic()
+  generateMnemonic() {
+    return generateMnemonic()
   }
 
-  bip39ValidateMnemonic(value) {
-    return bip39.validateMnemonic(value)
+  validateMnemonic(value) {
+    return validateMnemonic(value)
   }
 
   /**
@@ -19,11 +19,11 @@ export class HDWallet {
    * @param {Array<string>} paths 
    * @returns {Array<KeyPair>}
    */
-  bip44BatchDeriveKeyPairs(mnemonic, paths) {
-    if (!this.bip39ValidateMnemonic(mnemonic))
+  batchDeriveKeyPairs(mnemonic, paths) {
+    if (!this.validateMnemonic(mnemonic))
       throw new Error('Invalid mnemonic')
-    const seed = bip39.mnemonicToSeedSync(mnemonic)
-    const root = bip32.fromSeed(seed)
+    const seed = mnemonicToSeedSync(mnemonic)
+    const root = fromSeed(seed)
     const result = []
     paths.forEach(path => {
       let node = root.derivePath(path)
