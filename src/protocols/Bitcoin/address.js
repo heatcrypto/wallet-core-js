@@ -22,6 +22,7 @@ export class BitcoinAddress {
 
   /**
    * @param {string} addr
+   * @returns {boolean}
    */
   isValid(addr) {
     if (!isString(addr)) throw new Error('Address not a string');
@@ -51,6 +52,7 @@ export class BitcoinAddress {
    * Returns an address for a private key which can be in either hex or wif format
    * @param {string} privateKeyHexOfWif 
    * @param {string} addressType 
+   * @returns {string}
    */
   getAddress(privateKeyHexOfWif, addressType) {
     if (isUndefined(BitcoinAddressTypeEnum[addressType])) throw new Error(`Unsupported address type ${addressType}`)

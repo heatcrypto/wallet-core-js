@@ -21,15 +21,17 @@ export class BitcoinPayment {
    * Creates a 1-to-1 transaction to an address. Returns the transaction as Hex
    * 
    * @param {Array<{
-   *   vout:number,
-   *   txId:string,
-   *   privateKey:string, // either hex or wif
-   *   sequence: number,
-   *   scriptSig:string
+   *   vout:number;
+   *   txId:string;
+   *   privateKey:string; // either hex or wif
+   *   sequence?: number;
+   *   scriptSig?:string;
+   *   keyPair?: ECPair; // this is added inside this method,
+   *   value?: any; // this is added inside this method,
    * }>} inputs 
    * @param {Array<{
-   *   address:string,
-   *   value:number
+   *   address:string;
+   *   value:number;
    * }>} outputs 
    * @returns {String}
    */
