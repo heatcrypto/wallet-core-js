@@ -2,8 +2,8 @@ const { expect } = require('chai')
 const { HeatPayment } = require('../../../src/protocols/Heat/payment')
 
 describe('HeatPayment', function () {
-  describe('#transferEth', function () {
-    it('should create eth payment', async function () {
+  describe('#transferHeat', function () {
+    it('should create payment', async function () {
       const key = 'privatekey',
         recipientAddress = '1234',
         recipientPublicKey = null,
@@ -18,8 +18,8 @@ describe('HeatPayment', function () {
       expect(bytes).to.be.a('string')
     })
   })
-  describe('#transferErc20', function () {
-    it('should create erc20 payment', async function () {
+  describe('#transferAsset', function () {
+    it('should create asset payment', async function () {
       const key = 'privatekey',
         recipientAddress = '1234',
         recipientPublicKey = null,
