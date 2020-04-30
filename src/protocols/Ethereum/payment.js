@@ -3,20 +3,20 @@ import { isNumber } from 'lodash'
 import { web3 } from './web3'
 
 const erc20TransferAbi = [{
-  "constant": false,
-  "inputs": [{
-    "name": "_to",
-    "type": "address"
+  constant: false,
+  inputs: [{
+    name: "_to",
+    type: "address"
   },{
-    "name": "_value",
-    "type": "uint256"
+    name: "_value",
+    type: "uint256"
   }],
-  "name": "transfer",
-  "outputs": [{
-    "name": "",
-    "type": "bool"
+  name: "transfer",
+  outputs: [{
+    name: "",
+    type: "bool"
   }],
-  "type": "function"
+  type: 'function'
 }];
 
 export class EthereumPayment {
@@ -60,7 +60,8 @@ export class EthereumPayment {
    */
   transferErc20(privateKey, contractAddress, to, value, nonce, gasPrice, gas) {
     const address = new EthereumAddress(this.chainId)
-    const from = address.getAddress(privateKey)
+    const from = address.getAddress(privateKey)    
+    // @ts-ignore
     const contract = new web3.eth.Contract(erc20TransferAbi, contractAddress, { from });
     const data = contract.methods.transfer(to, value).encodeABI()
     const tx = {

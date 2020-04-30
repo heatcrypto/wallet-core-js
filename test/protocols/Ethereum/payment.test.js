@@ -6,7 +6,7 @@ describe('EthereumPayment', function () {
     it('should create eth payment', async function () {
       const privateKey = "0xcecee6703bd6274014e0beabb7a00951c849253b1a5d9f60418422ebb8344fba",
         to = "0x2652a649aBa066D8C1e37B0A0C45dFD5E1c91527",
-        nonce = "10",
+        nonce = 10,
         value = "10000",
         gasPrice = "20000000000",
         gas = "21000";
@@ -20,7 +20,7 @@ describe('EthereumPayment', function () {
     it('should create erc20 payment', async function () {
       const privateKey = "0xcecee6703bd6274014e0beabb7a00951c849253b1a5d9f60418422ebb8344fba",
         to = "0x2652a649aBa066D8C1e37B0A0C45dFD5E1c91527",
-        nonce = "10",
+        nonce = 10,
         value = "10000",
         gasPrice = "20000000000",
         gas = "50000",
