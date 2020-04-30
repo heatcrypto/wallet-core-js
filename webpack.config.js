@@ -5,7 +5,7 @@ module.exports = {
   target: 'node',
   experiments: { asyncWebAssembly: true, importAsync: true },
   optimization: {
-    minimize: true,
+    minimize: false,
   },
   output: {
     filename: 'node.bundle.js',
