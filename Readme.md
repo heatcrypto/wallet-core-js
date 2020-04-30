@@ -10,9 +10,9 @@ This library was created for **Heat Wallet** our easy to use and extensible mobi
 
 The target environments for this library are:
 
-1. Android and Ios apps (embedded node.js runtime)
+1. Android and IOS apps (executed in embedded node.js runtime)
 2. Server side (node.js)
-3. Browser environments through browserify
+3. Browser (through browserify)
 
 ## Links
 
