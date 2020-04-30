@@ -11,9 +11,12 @@
         "skipFiles": [
           "<node_internals>/**"
         ],
-        "program": "${workspaceFolder}/node_modules/.bin/mocha",
+        "program": "${workspaceFolder}/node_modules/.bin/_mocha",
         "args": [
-          "${workspaceFolder}/test/**/*.test.js",
+          "'./test/*/**/*.test.js'",
+          "--timeout",
+          "999999",
+          "--colors",          
           "--require",
           "esm"
         ]

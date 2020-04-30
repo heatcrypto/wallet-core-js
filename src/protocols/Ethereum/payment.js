@@ -1,6 +1,6 @@
-import { EthereumAddress } from './address'
 import { isNumber } from 'lodash'
-import { web3 } from './web3'
+import { Wallet } from 'ethers'
+import { bigNumberify, Interface } from 'ethers/utils'
 
 const erc20TransferAbi = [{
   constant: false,
@@ -31,21 +31,20 @@ export class EthereumPayment {
    * @param {number | string} value 
    * @param {number} nonce 
    * @param {number | string} gasPrice 
-   * @param {number | string} gas // means provided gas or gas limit 
+   * @param {number | string} gasLimit // means provided gas or gas limit 
    * @returns {Promise<string>}
    */
-  transferEth(privateKey, to, value, nonce, gasPrice, gas) {
+  transferEth(privateKey, to, value, nonce, gasPrice, gasLimit) {
+    const wallet = new Wallet(privateKey)
     const tx = {
       to,
-      nonce,
-      value,
-      gasPrice,
-      gas,
+      nonce: bigNumberify(nonce),
+      value: bigNumberify(value),
+      gasPrice: bigNumberify(gasPrice),
+      gasLimit: bigNumberify(gasLimit),
       chainId: this.chainId
     }
-    return web3.eth.accounts.signTransaction(tx, privateKey).then(signed => {
-      return signed.rawTransaction;
-    });
+    return wallet.sign(tx)
   }
 
   /**
@@ -55,27 +54,21 @@ export class EthereumPayment {
    * @param {number | string} value 
    * @param {number} nonce 
    * @param {number | string} gasPrice 
-   * @param {number | string} gas 
+   * @param {number | string} gasLimit
    * @returns {Promise<string>}
    */
-  transferErc20(privateKey, contractAddress, to, value, nonce, gasPrice, gas) {
-    const address = new EthereumAddress(this.chainId)
-    const from = address.getAddress(privateKey)    
-    // @ts-ignore
-    const contract = new web3.eth.Contract(erc20TransferAbi, contractAddress, { from });
-    const data = contract.methods.transfer(to, value).encodeABI()
+  async transferErc20(privateKey, contractAddress, to, value, nonce, gasPrice, gasLimit) {
+    const wallet = new Wallet(privateKey);
+    const iface = new Interface(erc20TransferAbi)
+    const data = iface.functions.transfer.encode([to, bigNumberify(value)])
     const tx = {
-      from,
       to: contractAddress,
-      nonce,
-      value: '0x0',
-      gasPrice,
-      gas,
+      nonce: bigNumberify(nonce),
+      gasPrice: bigNumberify(gasPrice),
+      gasLimit: bigNumberify(gasLimit),
       chainId: this.chainId,
       data,
     }
-    return web3.eth.accounts.signTransaction(tx, privateKey).then(signed => {
-      return signed.rawTransaction;
-    });
+    return wallet.sign(tx)
   }
 }

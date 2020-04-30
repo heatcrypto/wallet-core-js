@@ -5,9 +5,11 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
+    "clean": "rm -r dist; mkdir dist",
     "lint": "eslint ./src/**/*",
     "nyc": "nyc mocha './test/*/**/*.test.js' --require esm",
-    "test": "mocha './test/*/**/*.test.js' --require esm"
+    "test": "mocha './test/*/**/*.test.js' --require esm",
+    "webpack": "npm run clean; webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,9 @@
     "eslint-plugin-mocha": "^6.3.0",
     "esm": "^3.2.25",
     "mocha": "*",
-    "nyc": "^15.0.1"
+    "nyc": "^15.0.1",
+    "webpack": "^5.0.0-beta.15",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@trezor/utxo-lib": "^0.1.0",
@@ -40,7 +44,8 @@
     "bip32": "^2.0.5",
     "bip39": "^3.0.2",
     "coinselect": "^3.1.12",
-    "lodash": "^4.17.15",
-    "web3": "^1.2.7"
+    "ethers": "^4.0.47",
+    "heat-sdk": "^2.1.0",
+    "lodash": "^4.17.15"
   }
 }

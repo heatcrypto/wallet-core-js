@@ -1,5 +1,6 @@
 import { isNumber } from 'lodash'
-import { web3 } from './web3'
+import { Wallet } from 'ethers'
+import { getAddress } from 'ethers/utils'
 
 export class EthereumAddress {
   constructor(chainId) {
@@ -12,7 +13,10 @@ export class EthereumAddress {
    * @returns {boolean}
    */
   isValid(addr) {
-    return web3.utils.isAddress(addr)
+    try {
+      getAddress(addr);
+    } catch (e) { return false; }
+    return true;
   }
 
   /**
@@ -21,7 +25,7 @@ export class EthereumAddress {
    * @returns {string}
    */
   getAddress(privateKey) {
-    const data = web3.eth.accounts.privateKeyToAccount(privateKey)
-    return data ? data.address : null;
+    const wallet = new Wallet(privateKey);
+    return wallet.address
   }
 }

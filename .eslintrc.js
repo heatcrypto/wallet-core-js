@@ -6,7 +6,8 @@ module.exports = {
   "extends": ["eslint:recommended", "plugin:mocha/recommended"],
   "globals": {
     "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+    "SharedArrayBuffer": "readonly",
+    "BigInt": true
   },
   "parserOptions": {
     "ecmaVersion": 2018,

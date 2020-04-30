@@ -17,3 +17,11 @@ The target environments for this library are:
 ## Links
 
 - [Todo](Todo.md)
+
+## Errors
+
+Cant webpack
+
+See 
+
+1. https://github.com/ethereum/web3.js/issues/1105

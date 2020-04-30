@@ -37,7 +37,7 @@ export class BitcoinPayment {
    */
   create1to1Payment(inputs, outputs) {
     const txb = new TransactionBuilder(this.network)
-    const {network,networkId} = this
+    const { network, networkId } = this
 
     // must pass legacy address format for bitcoincash
     if (networkId == 'bitcoincash') {
