@@ -2,7 +2,7 @@
   "name": "wallet-core-js",
   "version": "0.1.0",
   "description": "Cross-platform, cross-blockchain wallet library.",
-  "main": "index.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "lint": "eslint ./src/**/*",
