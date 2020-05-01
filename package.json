@@ -9,7 +9,8 @@
     "lint": "eslint ./src/**/*",
     "nyc": "nyc mocha './test/*/**/*.test.js' --require esm",
     "test": "mocha './test/*/**/*.test.js' --require esm",
-    "webpack": "npm run clean; webpack --config webpack.config.js"
+    "pack:webpack": "mkdir -p dist; webpack --config webpack.config.js",
+    "pack:liquidcore": "mkdir -p dist; webpack --config liquidcore.webpack.config.js"
   },
   "repository": {
     "type": "git",

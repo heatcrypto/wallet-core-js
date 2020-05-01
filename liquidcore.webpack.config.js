@@ -1,14 +1,14 @@
 const path = require('path');
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
+  entry: './src/liquidcore.js',
   target: 'node',
   experiments: { asyncWebAssembly: true, importAsync: true },
   optimization: {
-    minimize: false,
+    minimize: true,
   },
   output: {
-    filename: 'node.bundle.js',
+    filename: 'liquidcore.bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   externals: [

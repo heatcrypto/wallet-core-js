@@ -33,7 +33,6 @@ export class BitcoinAddress {
       address.toOutputScript(addr, this.network)
       return true
     } catch (e) {
-      console.error(e)
       return false
     }    
   }
