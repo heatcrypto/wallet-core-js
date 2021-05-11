@@ -48,7 +48,7 @@
     "ethers": "^4.0.47",
     "heat-sdk": "^2.1.0",
     "fimk-sdk": "dmdeklerk/fimk-sdk#master",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "utf-8-validate": "^5.0.2"
   }
 }
